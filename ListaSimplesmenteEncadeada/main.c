@@ -46,13 +46,19 @@ void imprimeInfo(void *data) {
     }
 }
 
-void sllList(SLList *c) {  
-    
-    if(c != NULL) {
-        sllListElements(c, imprimeInfo);
-    }   
+//Função para listar alunos
+void sllList(SLList *l){
+    Aluno *a = NULL;
+    a = (Aluno *)sllGetNext(l);
+    if(a != NULL) {
+        while(a != NULL){
+            imprimeInfo(a);
+            a=(Aluno*)sllGetNext(l);
+        }
+    } else {
+        printf("\n**A lista esta vazia**\n");
+    }
 }
-
 
 // Funções para comparar tipos (para busca ou remoção)
 int cmpMatr(void *a, void *b) {
@@ -253,14 +259,14 @@ void manipulaList(SLList *lista) {
             consultaAluno(lista);
             break;
         case 4:
-            sllList(lista);
+                sllList(lista);          
             break;
         case 5:
             sllEmpty(lista);
             printf("\n**Esvaziando lista...**\n");
             break;
         case 6:
-            if(sllDestroy(lista)) {
+        if(sllDestroy(lista)) {
                 printf("\n**lista Destruida**\n");
                 opcao = 0;
             }else {

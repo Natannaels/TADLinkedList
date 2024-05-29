@@ -21,7 +21,7 @@
     void *sllRemoveSpec( SLList *l, void *key, int (*cmp)(void *, void*));
     void *sllRemoveFirst ( SLList *l);
     int sllEmpty(SLList *l);
-    void sllListElements(SLList *l, void (*printFunc)(void *));
+    void *sllGetNext(SLList *l);
 
 #else
     #define TRUE 1
@@ -35,5 +35,5 @@
     extern void *sllRemoveSpec( SLList *l, void *key, int (*cmp)(void *, void*));
     extern void *sllRemoveFirst ( SLList *l);
     extern int sllEmpty(SLList *l);
-    extern void sllListElements(SLList *l, void (*printFunc)(void *));
+    extern void *sllGetNext(SLList *l);
 #endif

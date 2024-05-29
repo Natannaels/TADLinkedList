@@ -1,6 +1,6 @@
 Nome: Filiphe Natannael Setubal Salgado
 ## Descrição 
-Este programa implementa um TAD Lista implesmente Encadeada
+Este programa implementa um TAD Lista Simplesmente Encadeada
 
 ## Ambiente ao qual este programa foi desenvolvido:
 

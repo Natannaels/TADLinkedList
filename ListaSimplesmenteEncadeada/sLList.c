@@ -132,11 +132,18 @@ int sllEmpty(SLList *l) {
     return FALSE;
 }
 
-void sllListElements(SLList *l, void (*printFunc)(void *)) {
-    SLNode *current = l->first;
-    while (current != NULL) {
-        printFunc(current->data);
-        current = current->next;
+void* sllGetNext(SLList *l) {
+    static SLNode *cur = NULL;
+    if (l != NULL) {
+        if (cur == NULL) {
+            cur = l->first;
+        } else {
+            cur = cur->next;
+        }
+        if (cur != NULL) {
+            return cur->data;
+        }
     }
+    return NULL;
 }
 #endif
